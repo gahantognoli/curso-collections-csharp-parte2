@@ -8,9 +8,136 @@ namespace Alura.CursoCollectionParte2
     {
         static void Main(string[] args)
         {
-            Aula3();
+            
 
             Console.ReadKey();
+        }
+
+        private static void Aula4()
+        {
+            //List<Mes> meses = new List<Mes>()
+            //{
+            //    new Mes("Janeiro", 31),
+            //    new Mes("Fevereiro", 28),
+            //    new Mes("Março", 31),
+            //    new Mes("Abril", 30),
+            //    new Mes("Maio", 31),
+            //    new Mes("Junho", 30),
+            //    new Mes("Julho", 31),
+            //    new Mes("Agosto", 31),
+            //    new Mes("Setembro", 30),
+            //    new Mes("Outubro", 31),
+            //    new Mes("Novembro", 30),
+            //    new Mes("Dezembro", 31)
+            //};
+
+            ////Pegar primeiro trimestre
+            //var consulta = meses
+            //    .Take(3);
+
+            //foreach (var item in consulta)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine();
+
+            ////Pegar os meses depois do primeiro trimestre
+            //var consulta2 = meses
+            //    .Skip(3);
+
+            //foreach (var item in consulta2)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine();
+
+            ////Pegar os meses depois do terceiro trimestre
+            //var consulta3 = meses
+            //    .Skip(6)
+            //    .Take(3);
+
+            //foreach (var item in consulta3)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine();
+
+            ////Pegar os meses até o mês que comece com a letra 'S'
+            //var consulta4 = meses
+            //    .TakeWhile(m => !m.Nome.StartsWith("S"));
+
+            //foreach (var item in consulta4)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Console.WriteLine();
+
+            ////Pular os meses até o mês que comece com a letra 'S'
+            //var consulta5 = meses
+            //    .SkipWhile(m => !m.Nome.StartsWith("S"));
+
+            //foreach (var item in consulta5)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Operações LINQ com conjutos
+            string[] seq1 = { "janeiro", "fevereiro", "março" };
+            string[] seq2 = { "fevereiro", "MARÇO", "abril" };
+
+            Console.WriteLine("Concatenar duas sequências");
+
+            var consulta = seq1.Concat(seq2);
+
+            foreach (var item in consulta)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("União de duas sequências");
+            var consulta2 = seq1.Union(seq2);
+
+            foreach (var item in consulta2)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("União de duas sequências com comparador");
+
+            var consulta3 = seq1.Union(seq2, StringComparer.InvariantCultureIgnoreCase);
+
+            foreach (var item in consulta3)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Interseção de duas sequências com comparador");
+
+            var consulta4 = seq1.Intersect(seq2);
+
+            foreach (var item in consulta4)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Exceto: elementos de seq1 que não estão em seq2");
+
+            var consulta5 = seq1.Except(seq2);
+
+            foreach (var item in consulta5)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void Aula3()
